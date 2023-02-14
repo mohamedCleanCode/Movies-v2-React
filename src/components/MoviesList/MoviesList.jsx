@@ -11,6 +11,7 @@ const MoviesList = () => {
   useEffect(() => {
     dispatch(fetchMovies());
   }, []);
+
   return (
     <Row className="movies-list text-center">
       {movies.length >= 1 ? (

@@ -16,3 +16,13 @@ export const fetchMovies = () => {
     dispatch(getAllMovies(data.results));
   };
 };
+
+export const fetchMoviesBySearch = (word) => {
+  return async (dispatch) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=355f3cc55c1a5f8fb6f7b79d7541faea&query=${word}&language=en`
+    );
+    const data = await res.json();
+    dispatch(getAllMovies(data.results));
+  };
+};

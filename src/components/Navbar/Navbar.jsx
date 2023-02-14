@@ -1,7 +1,22 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import {
+  fetchMovies,
+  fetchMoviesBySearch,
+} from "../../redux/actions/moviesActions";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  const onSearch = (e) => {
+    if (e.target.value === "") {
+      dispatch(fetchMovies());
+    } else {
+      dispatch(fetchMoviesBySearch(e.target.value));
+    }
+  };
+
   return (
     <div className="navbar">
       <Container>
@@ -15,6 +30,7 @@ const Navbar = () => {
           </Col>
           <Col sm={10} className="input-search">
             <input
+              onChange={onSearch}
               type="text"
               className="form-control border-0"
               placeholder="Search a movie..."
