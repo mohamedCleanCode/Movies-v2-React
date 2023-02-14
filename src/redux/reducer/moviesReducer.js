@@ -1,9 +1,12 @@
 import * as types from "../types/moviesTypes";
-
-export const moviesReducer = (state = [], action) => {
+const initialState = {
+  date: {},
+  movies: [],
+};
+export const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_ALL_MOVIES:
-      return [...action.payload];
+      return { ...state, movies: [...action.payload], data: action.data };
     default:
       return state;
   }
