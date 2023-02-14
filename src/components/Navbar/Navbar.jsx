@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   fetchMovies,
   fetchMoviesBySearch,
@@ -21,12 +22,14 @@ const Navbar = () => {
     <div className="navbar">
       <Container>
         <Row className="justify-content-between w-100 align-items-center">
-          <Col sm={2} className="logo">
-            <img
-              src="https://e1.pngegg.com/pngimages/974/699/png-clipart-movies-and-popcorn-folder-icon-movies.png"
-              alt="logo"
-              className="rounded-circle"
-            />
+          <Col sm={1} className="logo">
+            <Link to="/">
+              <img
+                src="https://e1.pngegg.com/pngimages/974/699/png-clipart-movies-and-popcorn-folder-icon-movies.png"
+                alt="logo"
+                className="rounded-circle"
+              />
+            </Link>
           </Col>
           <Col sm={10} className="input-search">
             <input

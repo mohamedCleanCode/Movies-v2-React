@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   return (
-    <div className="movie-card position-relative rounded">
+    <Link
+      to={`/movie/${movie.id}`}
+      className="movie-card position-relative rounded"
+    >
       <img
         className="rounded w-100 h-100"
         style={{
@@ -26,7 +30,7 @@ const MovieCard = ({ movie }) => {
           Vote Average: <span>{movie.vote_average}</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

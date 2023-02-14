@@ -15,6 +15,7 @@ export const fetchMovies = () => {
     );
     const data = await res.json();
     dispatch(getAllMovies(data.results, data));
+    console.log(data);
   };
 };
 
@@ -25,6 +26,7 @@ export const fetchMoviesBySearch = (word) => {
     );
     const data = await res.json();
     dispatch(getAllMovies(data.results, data));
+    console.log(data);
   };
 };
 
@@ -35,5 +37,6 @@ export const fetchMoviesByPage = (page) => {
     );
     const data = await res.json();
     dispatch(getAllMovies(data.results, data));
+    console.log(data);
   };
 };
