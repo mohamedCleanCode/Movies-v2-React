@@ -1,6 +1,8 @@
-export const getMovies = (movies) => {
+import * as types from "../types/moviesTypes";
+
+export const getAllMovies = (movies) => {
   return {
-    type: "GET_MOVIES",
+    type: types.GET_ALL_MOVIES,
     payload: movies,
   };
 };
@@ -11,6 +13,6 @@ export const fetchMovies = () => {
       "https://api.themoviedb.org/3/movie/popular?api_key=52ef927bbeb21980cd91386a29403c78&language=en"
     );
     const data = await res.json();
-    dispatch(getMovies(data.results));
+    dispatch(getAllMovies(data.results));
   };
 };

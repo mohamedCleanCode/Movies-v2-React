@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../../store/actions/movies-actions";
+import { fetchMovies } from "../../redux/actions/moviesActions";
 import MovieCard from "../MovieCard/MovieCard";
 
 const MoviesList = () => {
@@ -10,7 +10,6 @@ const MoviesList = () => {
 
   useEffect(() => {
     dispatch(fetchMovies());
-    console.log(movies);
   }, []);
   return (
     <Row className="movies-list text-center">
